@@ -1512,6 +1512,11 @@ hr{
             var modal = document.getElementById("myModal_" + id);
             //var btn = document.getElementById("myBtn_" + id);
             modal.style.display = "block";
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    CloseModal(id);
+                }
+            });
         }
         function CloseModal(id) {
             var modal = document.getElementById("myModal_" + id);
@@ -1521,11 +1526,23 @@ hr{
             var modal = document.getElementById("myModalm_" + id);
 
             modal.style.display = "block";
+            
         }
         function CloseModalm(id) {
             var modal = document.getElementById("myModalm_" + id);
             modal.style.display = "none";
-        }                   
+        }
+
+
+        function modalClosed(){
+            var elements = document.querySelectorAll('[id^="myModal"]');
+            elements.forEach(function(element) {
+                element.style.display = "none";
+            });
+        }
+
+
+
     </script>
 </main>
 
