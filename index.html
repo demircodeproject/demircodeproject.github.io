@@ -1526,6 +1526,11 @@ hr{
             var modal = document.getElementById("myModalm_" + id);
 
             modal.style.display = "block";
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    CloseModal(id);
+                }
+            });
             
         }
         function CloseModalm(id) {
